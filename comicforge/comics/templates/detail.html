@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ comic.title }}</h1>
+<p>{{ comic.description }}</p>
+
+{% for panel in comic.panel_set.all %)
+    <img src="#" alt="{{ panel.comic.title }}">
+
+    {% for text_element in panel.text_elements %}
+        <div class="text_element">
+            {{ text_element.text }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}
